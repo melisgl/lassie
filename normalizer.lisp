@@ -382,7 +382,7 @@ originally assembled matrix.")))
 (defmethod print-object :around ((normalizer column-power-normalizer) stream)
   (if *print-readably*
       (format stream "#.~S"
-              `(make-column-power-normalizer :power (power normalizer)))
+              `(make-column-power-normalizer :power ,(power normalizer)))
       (call-next-method)))
 
 (defmethod normalize-matrix ((normalizer column-power-normalizer) matrix)
