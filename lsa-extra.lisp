@@ -20,10 +20,10 @@ vector if needed while respecting MAX-LENGTH"
 (defun cosine-similarity (x y &key (n (length x)))
   (declare (type single-float-vector x y)
            (type fixnum n))
-  (let ((sum1 0.0)
-        (sum2 0.0)
-        (sum3 0.0))
-    (declare (type (single-float 0.0) sum1 sum2 sum3))
+  (let ((sum1 0f0)
+        (sum2 0f0)
+        (sum3 0f0))
+    (declare (type (single-float 0f0) sum1 sum2 sum3))
     (locally
         (declare (optimize (speed 3)))
       (loop for i below n do
@@ -35,7 +35,7 @@ vector if needed while respecting MAX-LENGTH"
     (setq sum2 (sqrt sum2))
     (setq sum3 (sqrt sum3))
     (if (or (zerop sum2) (zerop sum3))
-        0.0
+        0f0
         (/ sum1 sum2 sum3))))
 
 (defun most-similar-documents (lsa document-features
