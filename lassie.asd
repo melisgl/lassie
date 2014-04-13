@@ -1,11 +1,6 @@
 ;;;; -*- mode: Lisp -*-
 
-(cl:defpackage #:lassie.system
-  (:use #:cl #:asdf))
-
-(cl:in-package #:lassie.system)
-
-(defsystem #:lassie
+(asdf:defsystem #:lassie
   :name "Lassie"
   :description "Library for Latent Semantic Indexing."
   :author "Gabor Melis"
